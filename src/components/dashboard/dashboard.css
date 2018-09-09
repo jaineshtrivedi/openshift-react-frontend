@@ -1,0 +1,10 @@
+body{
+    background-color: #e9ecef;
+}
+.employee-table {
+    margin:5%;
+    background-color: white;
+}
+.addEmployeeButton{
+    margin:1%;
+}
