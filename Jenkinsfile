@@ -4,7 +4,7 @@ node {
    sh 'npm --version'
    
    stage("Checkout Source"){
-       checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://github.com/akilans/react-node-employee.git']]])
+       checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url:'https://github.com/akilans/openshift-react-frontend.git']]])
    }
    
    stage("Install Dependencies"){
@@ -19,6 +19,14 @@ node {
    stage("Unit Test"){
          sh 'npm run test -- --coverage'
          publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'coverage/lcov-report', reportFiles: 'index.html', reportName: 'Coverage Report', reportTitles: ''])
+   }
+
+   stage("Building Application"){
+        openshiftBuild(buildConfig: 'react-frontend-app',showBuildLogs: 'true')
+   }
+
+   stage("Deploying Application"){
+       openshiftDeploy(deploymentConfig: 'react-frontend-app')
    }
    
    

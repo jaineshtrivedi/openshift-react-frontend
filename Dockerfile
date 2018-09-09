@@ -20,7 +20,7 @@ RUN npm install --only=production
 
 EXPOSE 8080
 
-ENV PORT=8080
+ENV PORT=8080 REACT_APP_API_URL=http://node-backend-app:8080/api
 
 USER appuser
 
