@@ -10,7 +10,7 @@ WORKDIR /usr/src/app
 # Bundle app source
 COPY . .
 
-ENV PORT=8080 REACT_APP_API_URL=http://node-backend-app:8080/api
+ENV PORT=8080 REACT_APP_API_URL=http://node-backend-app-coe-mern-project.apps.na39.openshift.opentlc.com/api
 
 RUN npm install --only=production && \
     npm install eslint --save && \
