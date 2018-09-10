@@ -21,14 +21,22 @@ node {
          publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'coverage/lcov-report', reportFiles: 'index.html', reportName: 'Coverage Report', reportTitles: ''])
    }
 
-   stage("Building Application"){
+   stage("Dev - Building Application"){
         openshiftBuild(buildConfig: 'react-frontend-app',showBuildLogs: 'true')
    }
 
-   stage("Deploying Application"){
+   stage("Dev - Deploying Application"){
        openshiftDeploy(deploymentConfig: 'react-frontend-app')
    }
    
+   
+   stage("Prod - Building Application"){
+        openshiftBuild(namespace:'prod-coe-mern-stack', buildConfig: 'react-frontend-app',showBuildLogs: 'true')
+   }
+
+   stage("Prod - Deploying Application"){
+       openshiftDeploy(namespace:'prod-coe-mern-stack', deploymentConfig: 'react-frontend-app')
+   }
    
    
 }
