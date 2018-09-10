@@ -29,6 +29,9 @@ node {
        openshiftDeploy(deploymentConfig: 'react-frontend-app')
    }
    
+   stage('Deploy to Production approval'){
+      input "Deploy to prod?"
+   }
    
    stage("Prod - Building Application"){
         openshiftBuild(namespace:'prod-coe-mern-stack', buildConfig: 'react-frontend-app',showBuildLogs: 'true')
