@@ -74,7 +74,9 @@ class index extends Component {
 
                         </div>
                         <div className="col-sm-8 login-form">
-
+                            <button type="button" class="btn btn-primary">
+                                   Version <span class="badge badge-light">1</span>
+                            </button>
 
                             <div className="card">
                                 <div className="card-header">Login</div>
