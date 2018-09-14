@@ -285,7 +285,7 @@ objects:
     source:
       git:
         ref: master
-        uri: "${REACT_APP_API_URL}"
+        uri: "${REACT_APP_GIT_URL}"
       type: Git
     strategy:
       jenkinsPipelineStrategy:
