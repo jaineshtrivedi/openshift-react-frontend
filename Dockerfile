@@ -18,8 +18,6 @@ RUN npm install --only=production && \
 
 WORKDIR /usr/src/app/server
 
-RUN npm install --only=production
-
 EXPOSE 8080
 
 
