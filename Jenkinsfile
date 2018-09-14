@@ -28,7 +28,7 @@ node {
    stage("Dev - Deploying Application"){
        openshiftDeploy(deploymentConfig: 'react-frontend-app')
    }
-   
+   /*
    stage('Deploy to Production approval'){
       input "Deploy to prod?"
    }
@@ -40,6 +40,7 @@ node {
    stage("Prod - Deploying Application"){
        openshiftDeploy(namespace:'prod-coe-mern-stack', deploymentConfig: 'react-frontend-app')
    }
+   */
    
    
 }
