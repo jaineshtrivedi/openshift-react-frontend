@@ -8,7 +8,7 @@
 
         * Click import YAML option and import "react-node-app.yaml" template and provide Git Repo, mongodb URL with username and password
 
-        * Change Jenkins Quota limitation so it will start. Install NodeJS & HTML publisher plugin
+        * Change Jenkins Quota limitation so it will start. Install NodeJS add it into Global path with artillery installation
 
         * Replace REACT_APP_API_URL with DNS name of Node App route
 
